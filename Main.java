@@ -1,36 +1,39 @@
-package polymorphism;
+package abstraction;
 
-class A {
-	void display()
-	{
-		System.out.println("hello gm...");
+interface Vaibhav{
+	
+	void add();
+	void sum();
+	
+	default void display() {
+		System.out.println("display");
 	}
 	
-	void display(int a)
-	{
-		System.out.println(a);
-	}
 	
-	void display(int a, int b)
-	{
-		System.out.println(a+ " " + b);
-	}
-	
-	void display(String a,int b)
-	{
-		System.out.println(a + " " + b);
-	}
 }
-public class Main {
+public class Main implements Vaibhav {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		Main obj = new Main();
+		obj.add();
+		obj.sum();
+		obj.display();
+		
 
-		A a = new A();
-		a.display();
-		a.display(30);
-		a.display(10, 20);
-		a.display("priya", 50);
+	}
+
+	@Override
+	public void add() {
+		System.out.println("add");
+		
+	}
+
+	@Override
+	public void sum() {
+System.out.println("sub");
+		
 	}
 
 }
